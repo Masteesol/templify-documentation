@@ -2,9 +2,9 @@
 
 ## Navigation
 
-* [Components](./Components/index.md)
-* [Database](./Database/index.md)
-* [API routes](./Api/index.md)
+* [Components](./Components/README.md)
+* [Database](./Database/README.md)
+* [API routes](./Api/README.md)
 
 ## About Templify
 
