@@ -14,7 +14,16 @@ The template manager app is a lightweight template manager aimed at primarily cu
 
 #### Inspiration for the design
 
-At IKEA, Marius used sticky notes to hold text templates, with `XXX` as placeholders for names, ordernumbers and whatever else varied from customer to customer. Using sticky notes became hard to manage and the fact that you had to double click to mark the `XXX` symbols and overwrite them meant it was prone to errors and inconsistencies.
+At IKEA, Marius used sticky notes to hold text templates, with `XXX` as placeholders for customer names, order numbers, case numbers, etc. Using sticky notes became hard to manage and the fact that you had to double click to mark the `XXX` symbols and overwrite them meant it was prone to errors and inconsistencies.
+
+```txt
+Dear XXX,
+
+We've tried to contact you regarding your case, XXX.
+
+Best regards,
+IKEA customer support
+```
 
 IKEA had a templating tool, which no one used, because it was hard to manage and didn't have the inline placeholders, like the Templify app has.
 
