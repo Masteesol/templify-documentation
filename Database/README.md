@@ -1,5 +1,7 @@
 # Database
 
+* [<- Go home](/)
+
 ## Commands and links
 
 ### TypeScript database Schema

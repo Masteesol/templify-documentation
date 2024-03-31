@@ -1,5 +1,7 @@
 # Rendering and API-fetching - different types
 
+* [<- Go home](/)
+
 ## Client-side rendering and client-side api fetching
 
 Client-side rendering (CSR) and server-side rendering (SSR) are two different approaches to displaying content in a web application. Each has its advantages and disadvantages, and the choice between them often depends on the specific needs of the application. Similarly, client-side and server-side API fetching have their own set of pros and cons. Let's delve into each of these concepts.
