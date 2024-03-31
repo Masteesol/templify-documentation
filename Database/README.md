@@ -1,6 +1,6 @@
 # Database
 
-* [<- Go home](/)
+**[< Go home](/)**
 
 ## Commands and links
 

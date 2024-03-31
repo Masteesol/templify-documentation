@@ -1,6 +1,6 @@
 # Components
 
-* [<- Go home](/)
+**[< Go home](/)**
 
 If you don't know about rendering types like SSR, SSG and CSR, please read this document first: [Rendering and API-fetching - different types](./rendering_types/README.md)
 

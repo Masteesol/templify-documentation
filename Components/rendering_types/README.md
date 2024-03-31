@@ -1,6 +1,6 @@
 # Rendering and API-fetching - different types
 
-* [<- Go home](/)
+**[< Go home](/)**
 
 ## Client-side rendering and client-side api fetching
 
