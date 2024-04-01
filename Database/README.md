@@ -1,4 +1,4 @@
-# Database
+# Database and types
 
 **[< Go home](/)**
 
@@ -107,3 +107,29 @@ The public `users` table has rows related to the user which do not exist in the 
 ### subscription_tier
 
 Contains the different subscription tier along with their ID's. This table exists to have a centralised place for all the tiers and their plan information.
+
+
+## Custom types
+
+In order to efficiently we need to manipulate the data, and the processed data we also need to correctly type. Below you find the current types used in the application.
+
+```ts
+import { Database } from "@/utils/supabase/database.types";
+
+export type TemplateCollection = Omit<Database["public"]["Tables"]["template_collections"]["Row"], "created_at">
+  
+export type TemplateBase = Database["public"]["Tables"]["templates"]["Row"]
+
+export type TemplateWithCategoryName = {
+  category_name: string;
+  template_collections: TemplateCollection[] | null;
+} & TemplateBase;
+
+type Categories = Omit<Database["public"]["Tables"]["categories"]["Row"], "user_id">
+
+export type CategoryTemplateContainer = {
+    templates: TemplateWithCategoryName[];
+  } & Categories;
+  
+  export type CategoryForDashboard = Omit<Categories, "order">
+```
