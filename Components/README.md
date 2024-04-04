@@ -37,7 +37,7 @@ You'll notice if the the component is a client component if you se `"use client"
     ---> /api
 ```
 
-In Next.js you can wrap a folder in parenthesis to create route groups. These folders are excluded from the router and is used to logically group pages. The cool thing is that if you add a `layout.tsx` file in the route group, the children of the `layout.tsx` will be the components within the group only.
+In Next.js you can wrap a folder in parenthesis to create route groups. These folders are excluded from the router and is used to logically group pages. The cool thing is that if you add a `layout.tsx` file in the route group, the children of the `layout.tsx` will be the the Page.tsx components present within this group only.
 
 ## Components folder
 
