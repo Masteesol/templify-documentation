@@ -16,18 +16,41 @@ Server components are components rendered on the server.
 
 You'll notice if the the component is a client component if you se `"use client"` at the top of the page. The `"use client"` property is inherited by the children of that component, which is important to note, so you don't have to put `"use client"` on every child component.
 
+## Layout.tsx and route groups
+
+```bash
+/src/app
+    |
+    ---> /(auth)
+        |
+        ---> layout.tsx
+        |
+        ---> ...other pages
+    |
+    ---> /(public)
+    |
+        |
+        ---> layout.tsx
+        |
+        ---> ...other pages
+    |
+    ---> /api
+```
+
+In Next.js you can wrap a folder in parenthesis to create route groups. These folders are excluded from the router and is used to logically group pages. The cool thing is that if you add a `layout.tsx` file in the route group, the children of the `layout.tsx` will be the components within the group only.
+
 ## Components folder
 
 We have a components folder located at `/src/components`.
 
-Since the landing page and the application page are different in terms of layout, we found it easiest to separate their components like this:
+Since the public landing page page and the authenticated application page are different in terms of layout, we found it easiest to separate their components like this:
 
 ```bash
 /components
     |
-    ---> /Landing
+    ---> /Public
     |
-    ---> /App
+    ---> /Auth
     |
     ---> /Shared
 ```
@@ -39,11 +62,11 @@ The `Shared` folder contains components which are shared between the landing pag
 We've tried to organize components according to the content or page they belong to.
 
 ```bash
-/App
+/Auth
     |
     ---> /Dashboard
     |
-    ---> /PageLayout
+    ---> /Layout
     |
     ---> /Settings
     |

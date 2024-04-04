@@ -108,7 +108,6 @@ The public `users` table has rows related to the user which do not exist in the 
 
 Contains the different subscription tier along with their ID's. This table exists to have a centralised place for all the tiers and their plan information.
 
-
 ## Custom types
 
 In order to efficiently we need to manipulate the data, and the processed data we also need to correctly type. Below you find the current types used in the application.
