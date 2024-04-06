@@ -25,3 +25,64 @@ Supabase separates the database into different schemas, and the two most importa
 The public routes handles requests going to the public schema. An example is a user creating, updating or deleting a template.
 
 The auth routes handles requests going to the `auth` schema, but also Supabase's authtenticaiton functionality. An example of handling the auth schema is a user updating their password or email. Managing authentication requests like signing in or signing out is also done through the `auth` api routes.
+
+## ApiService class
+
+```ts
+class ApiService {
+  private static instance: ApiService;
+  private baseURL: string;
+
+  private constructor(baseURL: string) {
+    this.baseURL = baseURL;
+  }
+
+  public static getInstance(): ApiService {
+    if (!ApiService.instance) {
+      ApiService.instance = new ApiService('/api');
+    }
+    return ApiService.instance;
+  }
+
+  private async request(method: 'get' | 'post' | 'put' | 'delete', path: string, data?: any) {
+    const url = `${this.baseURL}${path}`;
+    return axios({ method, url, data });
+  }
+
+  public auth = {
+    signup: (data: {firstName: string, lastName: string, password: string, email: string}) => this.request('post', '/auth/signup', data),
+    signin: (data: {password: string, email: string}) => this.request('post', '/auth/signin', data),
+    signout: () => this.request('post', '/auth/signout'),
+    confirm: (data: any) => this.request('post', '/auth/confirm', data),
+    user: {
+      delete: (id: string) => this.request('delete', `/auth/users/${id}`),
+      create: (data: SignUpData) => this.request('post', `/auth/signup`, data)
+    }
+  };
+  public public = {
+    user: {
+      update: (id: string, data: {firstName?: string, lastName?: string}) => this.request('put', `/public/users/${id}`, data),
+    },
+    templates: {
+      get: (id?: string) => this.request('get', `/public/templates/${id}`),
+      update: (id: string, data: TemplateUpdateFields) => this.request('put', `/public/templates/${id}`, data),
+      delete: (id: string) => this.request('delete', `/public/templates/${id}`),
+      create: (data: {category_id: string, is_collection: boolean, order?: number}) => this.request('post', `/public/templates/`, data),
+        }
+    }
+}
+
+export default ApiService;
+```
+
+### Using the ApiService class
+
+```ts
+import ApiService from "@/app/api/_ApiService";
+const apiService = ApiService.getInstance()
+const bodyData = {
+            password: password,
+            email: email
+        }
+const response = await apiService.auth.signin(bodyData)
+```

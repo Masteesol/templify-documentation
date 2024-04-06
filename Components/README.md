@@ -21,7 +21,7 @@ You'll notice if the the component is a client component if you se `"use client"
 ```bash
 /src/app
     |
-    ---> /(auth)
+    ---> /(protected)
         |
         ---> layout.tsx
         |
@@ -43,14 +43,14 @@ In Next.js you can wrap a folder in parenthesis to create route groups. These fo
 
 We have a components folder located at `/src/components`.
 
-Since the public landing page page and the authenticated application page are different in terms of layout, we found it easiest to separate their components like this:
+Since the public landing pages and the protected application pages are different in terms of layout, we found it easiest to separate their components like this:
 
 ```bash
 /components
     |
     ---> /Public
     |
-    ---> /Auth
+    ---> /Protected
     |
     ---> /Shared
 ```
@@ -62,7 +62,7 @@ The `Shared` folder contains components which are shared between the landing pag
 We've tried to organize components according to the content or page they belong to.
 
 ```bash
-/Auth
+/Protected
     |
     ---> /Dashboard
     |
