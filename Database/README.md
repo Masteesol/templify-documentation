@@ -17,7 +17,7 @@ If you don't have the the Supabase CLI installed, I think you'll get prompted fo
 Run the command below to get the database schema as a TypeScript file:
 
 ```bash
-npx supabase gen types typescript --project-id jvbphwcsxjqbzowqlqfq > database.types.ts
+npx supabase gen types typescript --project-id jvbphwcsxjqbzowqlqfq | Set-Content -Encoding utf8  .\src\utils\supabase\database.types.ts
 ```
 
 This file will end up at the project root.
