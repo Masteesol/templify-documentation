@@ -4,6 +4,29 @@
 
 ## Commands and links
 
+### Create local database and use it to run tests
+
+#### How to use
+
+User must first run supabase login to first generate their user token.
+Creating a new env file called setEnvVars.ts under tests is also necessary. This file must include:
+
+```bash
+process.env.Testing_Password = "******"
+process.env.Testing_Email = "******@gmail.com"
+process.env.SUPABASE_URL = "http://127.0.0.1:54321" -> database url for the newly created database
+process.env.SUPABASE_ANON_KEY='' -> here you must check what key your database generates for you. This happens when running the script for the first time.
+```
+
+After the token is generated, simply run:
+`npm run-script tests`
+
+This will create a local instance of our supabase database, create the correct schema through a migration, fetch data from prod and use it to populate it.
+
+Then it uses `jest` to run some example tests against this database, outputting the results.
+
+After running tests the script then cleans the database containers (psql, etc) and removes the directory it created on step 1.
+
 ### TypeScript database Schema
 
 Run this command to authenticate the Supabase CLI:
