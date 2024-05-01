@@ -31,17 +31,18 @@ npx supabase link --project-ref jvbphwcsxjqbzowqlqfq
 
 * Get migration file to align with prod
 
-````bash
+```bash
 npx supabase db pull
 ```
 
 * To apply the new migration to your local database
 
-````bash
+```bash
 npx supabase migration up
 ```
 
 * Get prod data into test DB
+
 ```bash 
 npx supabase db dump --data-only -f supabase/seed.sql
 ```
