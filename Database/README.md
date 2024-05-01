@@ -6,7 +6,9 @@
 
 ### Create local database and use it to run tests
 
-#### How to use
+For setting up local database, view the complete guide [here](./local-db-steps/).
+
+#### How to test
 
 User must first run supabase login to first generate their user token.
 Creating a new env file called setEnvVars.ts under tests is also necessary. This file must include:
